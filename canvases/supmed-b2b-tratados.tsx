@@ -1,4 +1,4 @@
-import {
+﻿import {
   BarChart,
   Button,
   Grid,
@@ -13,7 +13,7 @@ import {
   Text,
   useCanvasAction,
   useCanvasState,
-} from 'cursor/canvas';
+} from '@/lib/cursor-canvas';
 
 const TOTAL_B2B_CRIADOS = 1650;
 const TOTAL_B2B_RESOLVIDOS = 1650;

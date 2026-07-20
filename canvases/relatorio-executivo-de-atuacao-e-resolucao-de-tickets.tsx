@@ -1,4 +1,4 @@
-import {
+﻿import {
   Button,
   BarChart,
   Divider,
@@ -13,7 +13,7 @@ import {
   Text,
   useCanvasAction,
   useCanvasState,
-} from 'cursor/canvas';
+} from '@/lib/cursor-canvas';
 
 const GENERATED_AT = "13/07/2026 17:54";
 const SOURCE_PATH = "D:\\Medcof\\HealthPanel Project\\data\\refresh-jul2026\\executivo-all.json";

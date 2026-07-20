@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Button, Card, CardBody, CardHeader, Grid, H1, Row, Select, Stack, Stat, Text, useCanvasAction, useCanvasState } from 'cursor/canvas';
+﻿import { useState } from 'react';
+import { Button, Card, CardBody, CardHeader, Grid, H1, Row, Select, Stack, Stat, Text, useCanvasAction, useCanvasState } from '@/lib/cursor-canvas';
 
 type MonthlyCount = {
   monthLabel: string;

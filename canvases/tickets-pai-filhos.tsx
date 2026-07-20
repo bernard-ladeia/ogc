@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, H1, H2, Pill, Row, Select, Stack, Stat, Table, Text, useCanvasAction, useCanvasState, useHostTheme } from 'cursor/canvas';
+﻿import { Button, Divider, Grid, H1, H2, Pill, Row, Select, Stack, Stat, Table, Text, useCanvasAction, useCanvasState, useHostTheme } from '@/lib/cursor-canvas';
 
 const CHART_COLORS = [
   '#1F8A65E8', '#70B0D8E0', '#5A6CC0F0', '#F0A040E0',

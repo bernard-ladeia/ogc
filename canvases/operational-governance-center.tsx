@@ -1,4 +1,4 @@
-import {
+﻿import {
   Button,
   Card,
   CardBody,
@@ -7,7 +7,7 @@ import {
   Stack,
   Text,
   useCanvasAction,
-} from 'cursor/canvas';
+} from '@/lib/cursor-canvas';
 
 const SNAPSHOT_AT = '13/07/2026 17:54';
 
