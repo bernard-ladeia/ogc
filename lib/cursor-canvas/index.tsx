@@ -148,8 +148,11 @@ export function useHostTheme() {
   return DARK_THEME;
 }
 
-export function useCanvasState<T>(key: string, defaultValue: T): [T, (action: T | ((prev: T) => T)) => void] {
-  return useState<T>(defaultValue);
+export function useCanvasState<T>(key: string, defaultValue: T): [T, (action: T | ((prev: T) => T)) => void];
+export function useCanvasState<T>(defaultValue: T): [T, (action: T | ((prev: T) => T)) => void];
+export function useCanvasState<T>(keyOrDefault: string | T, defaultValue?: T): [T, (action: T | ((prev: T) => T)) => void] {
+  const initial = defaultValue !== undefined ? defaultValue : keyOrDefault as T;
+  return useState<T>(initial);
 }
 
 export function useCanvasAction() {
@@ -232,7 +235,8 @@ export function Divider({ style }: DividerProps): JSX.Element {
   return <hr style={{ border: 'none', borderTop: `1px solid ${DARK_PALETTE.strokePrimary}`, margin: 0, ...style }} />;
 }
 
-export function Spacer(): JSX.Element {
+export function Spacer({ size }: { size?: number } = {}): JSX.Element {
+  if (size !== undefined) return <div style={{ width: size, height: size, flexShrink: 0 }} />;
   return <div style={{ flex: 1 }} />;
 }
 
@@ -468,9 +472,10 @@ export function Button({ children, variant = 'secondary', disabled, type = 'butt
 
 export type PillProps = {
   children?: ReactNode;
+  label?: ReactNode;
   active?: boolean;
   tone?: string;
-  size?: 'sm' | 'md';
+  size?: 'sm' | 'md' | 'small';
   leadingContent?: ReactNode;
   keyboardHint?: string;
   disabled?: boolean;
@@ -478,8 +483,9 @@ export type PillProps = {
   style?: CSSProperties;
   onClick?: () => void;
 };
-export function Pill({ children, active, size = 'md', leadingContent, disabled, title, style, onClick }: PillProps): JSX.Element {
-  const isSmall = size === 'sm';
+export function Pill({ children, label, active, size = 'md', leadingContent, disabled, title, style, onClick }: PillProps): JSX.Element {
+  const isSmall = size === 'sm' || size === 'small';
+  const content = label ?? children;
   return (
     <button
       title={title}
@@ -503,7 +509,7 @@ export function Pill({ children, active, size = 'md', leadingContent, disabled, 
       }}
     >
       {leadingContent}
-      {children}
+      {content}
     </button>
   );
 }
@@ -686,9 +692,10 @@ export type CalloutProps = {
   tone?: CalloutTone;
   title?: ReactNode;
   icon?: ReactNode;
+  message?: ReactNode;
   style?: CSSProperties;
 };
-export function Callout({ children, tone = 'info', title, style }: CalloutProps): JSX.Element {
+export function Callout({ children, message, tone = 'info', title, style }: CalloutProps): JSX.Element {
   const borderColor = TONE_COLORS[tone] ?? TONE_COLORS.info;
   return (
     <div style={{
@@ -699,7 +706,7 @@ export function Callout({ children, tone = 'info', title, style }: CalloutProps)
       ...style,
     }}>
       {title && <div style={{ fontWeight: 600, fontSize: 13, color: DARK_PALETTE.foreground, marginBottom: 4 }}>{title}</div>}
-      <div style={{ fontSize: 13, color: DARK_PALETTE.foregroundSecondary }}>{children}</div>
+      <div style={{ fontSize: 13, color: DARK_PALETTE.foregroundSecondary }}>{message ?? children}</div>
     </div>
   );
 }
@@ -712,6 +719,7 @@ export type TableProps = {
   headers: ReactNode[];
   rows: ReactNode[][];
   columnAlign?: Array<TableColumnAlign | undefined>;
+  columnWidths?: Array<string | undefined>;
   rowTone?: Array<TableRowTone | undefined>;
   framed?: boolean;
   striped?: boolean;
@@ -719,7 +727,7 @@ export type TableProps = {
   style?: CSSProperties;
   emptyMessage?: ReactNode;
 };
-export function Table({ headers, rows, columnAlign, rowTone, framed = true, striped, style, emptyMessage }: TableProps): JSX.Element {
+export function Table({ headers, rows, columnAlign, columnWidths, rowTone, framed = true, striped, style, emptyMessage }: TableProps): JSX.Element {
   return (
     <div style={{
       border: framed ? `1px solid ${DARK_PALETTE.strokePrimary}` : 'none',
@@ -727,7 +735,12 @@ export function Table({ headers, rows, columnAlign, rowTone, framed = true, stri
       overflowX: 'auto',
       ...style,
     }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, tableLayout: columnWidths ? 'fixed' : 'auto' }}>
+        {columnWidths && (
+          <colgroup>
+            {columnWidths.map((w, i) => <col key={i} style={{ width: w }} />)}
+          </colgroup>
+        )}
         <thead>
           <tr style={{ borderBottom: `1px solid ${DARK_PALETTE.strokePrimary}` }}>
             {headers.map((h, i) => (
