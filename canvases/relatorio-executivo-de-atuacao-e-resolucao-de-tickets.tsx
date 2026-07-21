@@ -15,7 +15,7 @@
   useCanvasState,
 } from '@/lib/cursor-canvas';
 
-const GENERATED_AT = "13/07/2026 17:54";
+const GENERATED_AT = "21/07/2026 13:47";
 const SOURCE_PATH = "D:\\Medcof\\HealthPanel Project\\data\\refresh-jul2026\\executivo-all.json";
 const RESOLUTION_PATH = "D:\\Medcof\\HealthPanel Project\\data\\supmed-extract\\resolution.json";
 const PERIOD_LABEL = "2025-11 a 2026-07 parcial";
@@ -24,7 +24,7 @@ const RULE_NOTES: string[] = [
   "Metrica de comments = contagem de comentarios feitos pelo agente no mes.",
   "Metrica de resolution notes usa campo customfield_11799 (assignee atual no mes de updated).",
   "Taxa de Resolucao = tickets distintos (assignee OU comentarista no periodo todo) com status done / total de tickets distintos. Deduplica por issueKey. Script: data/refresh-jul2026/process-executivo.js.",
-  "Extracao via MCP Jira com paginacao por nextPageToken (maxResults=100). Base historica fechada + incrementos preservados ate 13/07/2026 mesclados por issueKey (issue mais nova sobrescreve): 4.062 issues distintas / 14.550 comentarios processados.",
+  "Extracao via MCP Jira com paginacao por nextPageToken (maxResults=100). Base historica fechada + incrementos preservados ate 21/07/2026 mesclados por issueKey (issue mais nova sobrescreve): 4.062 issues distintas / 14.550 comentarios processados.",
   "LIMITACAO: sem changelog — proxy 'passou pelo time' = assignee atual ou comentou. Tickets reassignados para fora do time antes de fechar podem nao ser contabilizados."
 ];
 
@@ -35,7 +35,7 @@ const RESOLUTION_DATA: {
   team: ResolutionEntry;
   byAgent: Record<string, ResolutionEntry>;
 } = {
-  computedAt: "13/07/2026 17:54",
+  computedAt: "21/07/2026 13:47",
   team: { tickets: 2420, done: 2148, open: 272, taxaResolucao: 88.8 },
   byAgent: {
     "Eduardo Bombarda": { tickets: 1048, done: 961, open: 87, taxaResolucao: 91.7 },
@@ -73,7 +73,7 @@ const RULE_BLOCKS: Array<{ id?: string; name: string; description: string; sourc
     "id": "population",
     "name": "Bloco 1 - Populacao de tickets",
     "description": "Define a base de tickets SUPMED por janela anual.",
-    "source": "project = SUPMED AND updated >= \"2025-11-01\" AND updated <= \"2026-07-13 23:59\" ORDER BY updated ASC"
+    "source": "project = SUPMED AND updated >= \"2025-11-01\" AND updated <= \"2026-07-21 23:59\" ORDER BY updated ASC"
   },
   {
     "id": "fields",
@@ -97,7 +97,7 @@ const RULE_BLOCKS: Array<{ id?: string; name: string; description: string; sourc
     "id": "resolution",
     "name": "Bloco 5 - Taxa de Resolucao",
     "description": "Tickets distintos (assignee OU comentarista no periodo) com status done / total. Script: process4.ps1. Resultado: data/supmed-extract/resolution.json.",
-    "source": "data/refresh-jul2026/process-executivo.js (merge incremental) → resolution atualizado 13/07/2026"
+    "source": "data/refresh-jul2026/process-executivo.js (merge incremental) → resolution atualizado 21/07/2026"
   }
 ];
 

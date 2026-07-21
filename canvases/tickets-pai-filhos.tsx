@@ -10,17 +10,17 @@ const CHART_COLORS = [
 // "Desenvolvido N3" tem statusCategory=done no Jira, mas operacionalmente ainda
 // requer testes N3 + subida em produção + validação N2 antes de ser entregue.
 const ISSUES = [
-  { key: "SUPMED-4987", summary: "QBank - Simulado - Falha ao Clonar", status: "Teste em Produção", created: "14/07/2026", updated: "17/07/2026", filhos: 87, filhosConcluidos: 4, sistema: "QBank", tipoProblema: "Simulado" },
-  { key: "SUPMED-5065", summary: "QBank - Revisões Núcleo - Ofensiva Divergente do Dashboard", status: "Aguardando N3", created: "15/07/2026", updated: "17/07/2026", filhos: 30, filhosConcluidos: 0, sistema: "QBank", tipoProblema: "Revisões Núcleo" },
-  { key: "SUPMED-5006", summary: "QBank - Novo Teste - Dicas não aparecem", status: "Aguardando N3", created: "14/07/2026", updated: "17/07/2026", filhos: 17, filhosConcluidos: 0, sistema: "QBank", tipoProblema: "Novo Teste" },
-  { key: "SUPMED-1330", summary: "QBank - Flashcards - Falha ao Resetar os Flashcards", status: "Em produção N3", created: "07/02/2026", updated: "08/07/2026", filhos: 13, filhosConcluidos: 2, sistema: "QBank", tipoProblema: "Flashcards" },
+  { key: "SUPMED-4987", summary: "QBank - Simulado - Falha ao Clonar", status: "Concluído", created: "14/07/2026", updated: "20/07/2026", filhos: 87, filhosConcluidos: 66, sistema: "QBank", tipoProblema: "Simulado" },
+  { key: "SUPMED-5065", summary: "QBank - Revisões Núcleo - Ofensiva Divergente do Dashboard", status: "Em atendimento N1", created: "15/07/2026", updated: "20/07/2026", filhos: 32, filhosConcluidos: 6, sistema: "QBank", tipoProblema: "Revisões Núcleo" },
+  { key: "SUPMED-5006", summary: "QBank - Novo Teste - Dicas não aparecem", status: "Aguardando N3", created: "14/07/2026", updated: "17/07/2026", filhos: 17, filhosConcluidos: 6, sistema: "QBank", tipoProblema: "Novo Teste" },
+  { key: "SUPMED-1330", summary: "QBank - Flashcards - Falha ao Resetar os Flashcards", status: "Em produção N3", created: "07/02/2026", updated: "08/07/2026", filhos: 13, filhosConcluidos: 11, sistema: "QBank", tipoProblema: "Flashcards" },
   { key: "SUPMED-2143", summary: "Intranet - Simulados - Ranking sem Exibição", status: "Aguardando desenvolvimento N3", created: "09/04/2026", updated: "08/07/2026", filhos: 9, filhosConcluidos: 3, sistema: "QBank", tipoProblema: "Simulados Presenciais" },
   { key: "SUPMED-1483", summary: "DeckLabs - Flashcards - Ofensivas Sem Contabilização", status: "Feedback Aluno", created: "19/02/2026", updated: "09/07/2026", filhos: 5, filhosConcluidos: 0, sistema: "QBank", tipoProblema: "Flashcards" },
   { key: "SUPMED-4594", summary: "Qbank - Simulados - Sem Exibição", status: "Em desenvolvimento N3", created: "28/06/2026", updated: "14/07/2026", filhos: 4, filhosConcluidos: 0, sistema: "QBank", tipoProblema: "Simulado" },
   { key: "SUPMED-4793", summary: "Hermes - Progresso - Divergência na Exibição das TM's em Relação ao Apollo", status: "Aguardando N3", created: "03/07/2026", updated: "05/07/2026", filhos: 2, filhosConcluidos: 0, sistema: "Hermes (Login|Dashboard)", tipoProblema: "Progresso" },
-  { key: "SUPMED-4846", summary: "DeckLabs - Flashcards - Controle de Fonte Inativo em Cards Personalizados", status: "Em produção N3", created: "06/07/2026", updated: "13/07/2026", filhos: 2, filhosConcluidos: 0, sistema: "QBank", tipoProblema: "Flashcards" },
+  { key: "SUPMED-4846", summary: "DeckLabs - Flashcards - Controle de Fonte Inativo em Cards Personalizados", status: "Em produção N3", created: "06/07/2026", updated: "20/07/2026", filhos: 2, filhosConcluidos: 2, sistema: "QBank", tipoProblema: "Flashcards" },
   { key: "SUPMED-2347", summary: "Hermes - DailyCof - Perda de Ofensiva das Revisões Núcleo Pelo DailyCof", status: "Aguardando desenvolvimento N3", created: "17/04/2026", updated: "08/07/2026", filhos: 1, filhosConcluidos: 0, sistema: "QBank", tipoProblema: "Revisões Núcleo" },
-  { key: "SUPMED-4794", summary: "QBank - Meus Testes - Tarefas Mínimas e Bônus Concluídas Reaparecem como Pendentes", status: "Em análise N3", created: "03/07/2026", updated: "16/07/2026", filhos: 1, filhosConcluidos: 0, sistema: "Apollo (Aulas)", tipoProblema: "Cronograma" },
+  { key: "SUPMED-4794", summary: "QBank - Meus Testes - Tarefas Mínimas e Bônus Concluídas Reaparecem como Pendentes", status: "Aguardando desenvolvimento N3", created: "03/07/2026", updated: "21/07/2026", filhos: 1, filhosConcluidos: 0, sistema: "Apollo (Aulas)", tipoProblema: "Cronograma" },
   { key: "SUPMED-4954", summary: "qBank - Falha no Resumo ao Finalizar Testes em Modo Foco", status: "Aguardando N3", created: "09/07/2026", updated: "15/07/2026", filhos: 1, filhosConcluidos: 0, sistema: "QBank", tipoProblema: "Novo Teste" },
   { key: "SUPMED-4979", summary: "Apollo - Progresso Divergente na Tela Home", status: "Em desenvolvimento N3", created: "13/07/2026", updated: "17/07/2026", filhos: 1, filhosConcluidos: 0, sistema: "Apollo (Aulas)", tipoProblema: "Progresso" },
   { key: "SUPMED-2146", summary: "Qbank prime - Divergência resultado Simulado Presencial", status: "Concluído", created: "09/04/2026", updated: "12/06/2026", filhos: 10, filhosConcluidos: 2, sistema: "QBank", tipoProblema: "Simulados Presenciais" },
@@ -182,7 +182,7 @@ const tipoOptions = [
 
 const BAR_AREA_HEIGHT = 160;
 const BAR_WIDTH = 60;
-const REPORT_DATE = '17/07/2026';
+const REPORT_DATE = '21/07/2026';
 const ACTIVE_TABLE_HEADERS = ['Ticket', 'Sistema', 'Tipo de Problema', 'Status', 'Nº Filhos', 'Criado em', 'Atualizado em', 'Dias em aberto'];
 const COMPLETED_TABLE_HEADERS = ['Ticket', 'Status', 'Criado em', 'Atualizado em', 'Nº Filhos', 'Nº Filhos Concluído', 'Sistema', 'Tipo de Problema', 'Tempo até conclusão (estimado)'];
 const HEALTH_PANEL_PATH = 'C:/Users/BernardLadeia/.cursor/projects/d-Medcof-HealthPanel-Project/canvases/operational-governance-center.canvas.tsx';
@@ -443,11 +443,11 @@ export default function TicketsPaiFilhos() {
 
   return (
     <Stack gap={20} style={{ padding: '20px 24px', maxWidth: 1100 }}>
-      <Text tone="secondary" size="small">Gerado em 17/07/2026 10:26</Text>
+      <Text tone="secondary" size="small">Gerado em 21/07/2026 13:47</Text>
       <Row gap={16} align="center">
         <Stack gap={2} style={{ flex: 1 }}>
           <H1>Major Incident Analysis</H1>
-          <Text tone="secondary" size="small">Projeto SUPMED · Tickets pai agrupados pelo parent dos filhos · Gerado em 17/07/2026 10:26</Text>
+          <Text tone="secondary" size="small">Projeto SUPMED · Tickets pai agrupados pelo parent dos filhos · Gerado em 21/07/2026 13:47</Text>
         </Stack>
         <Button
           variant="secondary"
@@ -463,7 +463,7 @@ export default function TicketsPaiFilhos() {
         <Stat value={String(totalFilhosAtivosEmAberto)} label="Filhos em Aberto" tone="warning" />
         <Stat value={String(totalPaisConcluidos)} label="Tickets Pai Concluídos" tone="success" />
       </Grid>
-      <Text tone="secondary" size="small">Média de {mediaFilhosAtivos} filhos por pai ativo · Visão principal sem status Concluído/Concluido · Fonte: Jira JQL project = SUPMED AND parent is not EMPTY · Snapshot 17/07/2026 10:26</Text>
+      <Text tone="secondary" size="small">Média de {mediaFilhosAtivos} filhos por pai ativo · Visão principal sem status Concluído/Concluido · Fonte: Jira JQL project = SUPMED AND parent is not EMPTY · Snapshot 21/07/2026 13:47</Text>
 
       <Divider />
 

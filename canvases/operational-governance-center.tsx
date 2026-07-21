@@ -9,7 +9,7 @@
   useCanvasAction,
 } from '@/lib/cursor-canvas';
 
-const SNAPSHOT_AT = '13/07/2026 17:54';
+const SNAPSHOT_AT = '21/07/2026 13:47';
 
 const REPORT_CANVASES = [
   {

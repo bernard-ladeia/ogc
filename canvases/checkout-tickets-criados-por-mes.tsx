@@ -12,14 +12,14 @@ type SlaTopTicket = {
   hours: number;
 };
 
-const SNAPSHOT_AT = '13/07/2026 17:54 (UTC-3)';
+const SNAPSHOT_AT = '21/07/2026 13:47 (UTC-3)';
 const SOURCE_LABEL = 'Jira via MCP';
 const OGC_PATH = 'C:/Users/BernardLadeia/.cursor/projects/d-Medcof-HealthPanel-Project/canvases/operational-governance-center.canvas.tsx';
 
 const MONTHLY_COUNTS: MonthlyCount[] = [
   { monthLabel: 'Maio / 26', total: 1 },
   { monthLabel: 'Junho / 26', total: 67 },
-  { monthLabel: 'Julho / 26', total: 17 },
+  { monthLabel: 'Julho / 26', total: 51 },
 ];
 
 const CHECKOUT_TICKETS: SlaTopTicket[] = [
@@ -108,6 +108,40 @@ const CHECKOUT_TICKETS: SlaTopTicket[] = [
   { key: 'SUPMED-4875', monthLabel: 'Julho / 26', hours: 5.39 },
   { key: 'SUPMED-4888', monthLabel: 'Julho / 26', hours: 103.25 },
   { key: 'SUPMED-4971', monthLabel: 'Julho / 26', hours: 2.94 },
+  { key: 'SUPMED-4988', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-4989', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5025', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5026', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5027', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5028', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5029', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5030', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5032', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5035', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5036', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5037', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5038', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5040', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5041', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5042', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5066', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5067', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5068', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5070', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5071', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5072', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5073', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5094', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5096', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5097', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5155', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5169', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5182', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5192', monthLabel: 'Julho / 26', hours: 0 },
+  { key: 'SUPMED-5552', monthLabel: 'Julho / 26', hours: 16.14 },
+  { key: 'SUPMED-5554', monthLabel: 'Julho / 26', hours: 16.02 },
+  { key: 'SUPMED-5555', monthLabel: 'Julho / 26', hours: 15.99 },
+  { key: 'SUPMED-5556', monthLabel: 'Julho / 26', hours: 15.97 },
 ];
 
 const SLA_STATUS_INCLUDED = [

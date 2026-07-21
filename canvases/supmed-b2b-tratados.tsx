@@ -15,13 +15,13 @@
   useCanvasState,
 } from '@/lib/cursor-canvas';
 
-const TOTAL_B2B_CRIADOS = 1650;
-const TOTAL_B2B_RESOLVIDOS = 1650;
+const TOTAL_B2B_CRIADOS = 2000;
+const TOTAL_B2B_RESOLVIDOS = 2000;
 const TOTAL_B2B_PASSOU_OUTRA_EQUIPE = 0;
-const TOTAL_B2B_RESOLVIDOS_NO_PROPRIO_B2B = 1650;
+const TOTAL_B2B_RESOLVIDOS_NO_PROPRIO_B2B = 2000;
 
 const PERIODO_INICIO = '16/04/2026';
-const PERIODO_FIM = '13/07/2026';
+const PERIODO_FIM = '21/07/2026';
 const MES_TODOS = 'todos';
 const HEALTH_PANEL_PATH = 'C:/Users/BernardLadeia/.cursor/projects/d-Medcof-HealthPanel-Project/canvases/operational-governance-center.canvas.tsx';
 
@@ -29,14 +29,14 @@ const MENSAL_B2B = [
   { mes: 'Abr/2026', total: 10, resolvidos: 10 },
   { mes: 'Mai/2026', total: 752, resolvidos: 752 },
   { mes: 'Jun/2026', total: 691, resolvidos: 691 },
-  { mes: 'Jul/2026', total: 197, resolvidos: 197 },
+  { mes: 'Jul/2026', total: 547, resolvidos: 547 },
 ];
 
 const FLUXO_RESOLUCAO_B2B_MENSAL = [
   { mes: 'Abr/2026', resolvidos_no_b2b: 10, passou_outra_equipe: 0 },
   { mes: 'Mai/2026', resolvidos_no_b2b: 752, passou_outra_equipe: 0 },
   { mes: 'Jun/2026', resolvidos_no_b2b: 691, passou_outra_equipe: 0 },
-  { mes: 'Jul/2026', resolvidos_no_b2b: 197, passou_outra_equipe: 0 },
+  { mes: 'Jul/2026', resolvidos_no_b2b: 547, passou_outra_equipe: 0 },
 ];
 
 const TICKETS_ENVIADOS_N3: Array<{ key: string; created: string; status: string; summary: string }> = [
