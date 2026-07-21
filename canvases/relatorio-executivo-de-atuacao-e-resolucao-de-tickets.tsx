@@ -51,6 +51,7 @@ const HEALTH_PANEL_PATH = 'C:/Users/BernardLadeia/.cursor/projects/d-Medcof-Heal
 
 type Agent = {
   name: string;
+  shortName: string;
   isFormer: boolean;
 };
 
@@ -102,34 +103,13 @@ const RULE_BLOCKS: Array<{ id?: string; name: string; description: string; sourc
 ];
 
 const AGENTS: Agent[] = [
-  {
-    "name": "Eduardo Bombarda",
-    "isFormer": false
-  },
-  {
-    "name": "Maria Vitoria Jarzinski Oliveira",
-    "isFormer": false
-  },
-  {
-    "name": "Pedro H Pinheiro",
-    "isFormer": false
-  },
-  {
-    "name": "Luis Henrique Gonçalves Angelim",
-    "isFormer": false
-  },
-  {
-    "name": "Kevin da Silva Araujo",
-    "isFormer": false
-  },
-  {
-    "name": "Yasmin Danielli Sampaio",
-    "isFormer": true
-  },
-  {
-    "name": "João Gomes",
-    "isFormer": true
-  }
+  { name: "Eduardo Bombarda",                  shortName: "Eduardo B.",    isFormer: false },
+  { name: "Maria Vitoria Jarzinski Oliveira",  shortName: "Maria Vitoria", isFormer: false },
+  { name: "Pedro H Pinheiro",                  shortName: "Pedro P.",      isFormer: false },
+  { name: "Luis Henrique Gonçalves Angelim",   shortName: "Luis H.",       isFormer: false },
+  { name: "Kevin da Silva Araujo",             shortName: "Kevin A.",      isFormer: false },
+  { name: "Yasmin Danielli Sampaio",           shortName: "Yasmin S.",     isFormer: true  },
+  { name: "João Gomes",                        shortName: "João G.",       isFormer: true  },
 ];
 const MONTHS: MonthRow[] = [
   {
@@ -345,7 +325,7 @@ export default function RelatorioExecutivoDeAtuacaoEResolucaoDeTickets() {
         const row = month.byAgent[agent.name] || { comments: 0, resNotes: 0 };
         return acc + row.comments + row.resNotes;
       }, 0);
-      return { name: agent.name, interactions };
+      return { name: agent.name, shortName: agent.shortName, interactions };
     })
     .sort((a, b) => b.interactions - a.interactions);
 
@@ -444,7 +424,7 @@ export default function RelatorioExecutivoDeAtuacaoEResolucaoDeTickets() {
               categories={
                 showMonthlyBySelectedAgent
                   ? selectedAgentMonthlyInteractions.map((item) => item.month)
-                  : byAgentInteractions.map((item) => item.name)
+                  : byAgentInteractions.map((item) => item.shortName)
               }
               series={[
                 {
